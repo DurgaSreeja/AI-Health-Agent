@@ -11,7 +11,7 @@ from uagents.setup import fund_agent_if_low
 
 
 from langchain_google_genai import ChatGoogleGenerativeAI
-llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key='AIzaSyBApiQzHbt4Qx99XDARotNxqXNPTiS02T0')
+llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key='api_key')
 
 from langchain.chains import create_retrieval_chain
 
