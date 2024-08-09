@@ -12,13 +12,13 @@ const secretKey = "hello world";
 const { PythonShell } = require("python-shell");
 const { spawn } = require("child_process");
 const { exitCode } = require("process");
-const cors=require('cors');
+const cors = require("cors");
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 mongoose
   .connect(
-    "mongodb+srv://dlsathwik:sathwik2105@cluster0.io0xdro.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "mongodb+srv://dlsathwik:sathwik2105@cluster0.io0xdro.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {

@@ -14,6 +14,7 @@ import MyNewsComponent from "./paths/experiment1";
 import NearbyHospitalsMap from "./paths/map";
 import Jpp from "./paths/mainoutput";
 import DietPlan from "./paths/dietpan";
+import ChatbotPage from "./paths/ChatbotPage";
 
 function App() {
   return (
@@ -28,11 +29,11 @@ function App() {
           <Route path="/docsearch" element={<Searchpage />} />
           <Route path="/consultation" element={<Consult />} />
           <Route path="/fillform" element={<Experiment />} />
-          <Route path="/experiment" element={<MyNewsComponent/>}/>
-          <Route path="/map" element={<NearbyHospitalsMap />}/>
-          <Route path="/waterfilloutput" element={<Jpp/>}/>
-          <Route path="/dietplan" element={<DietPlan/>}/>
-          
+          <Route path="/experiment" element={<MyNewsComponent />} />
+          <Route path="/map" element={<NearbyHospitalsMap />} />
+          <Route path="/waterfilloutput" element={<Jpp />} />
+          <Route path="/dietplan" element={<DietPlan />} />
+          <Route path="/chatbot" element={<ChatbotPage />} />
         </Routes>
       </Router>
     </>
