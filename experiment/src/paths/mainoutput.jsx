@@ -39,7 +39,7 @@ const Jpp = () => {
           setName(name);
           setMedicalData(medicalHistory);
           GetOutput(medicalHistory, name);
-          GetOutput1(medicalHistory,name);
+          // GetOutput1(medicalHistory,name);
         } else {
           console.error("Error fetching data");
         }
@@ -55,19 +55,22 @@ const Jpp = () => {
   const GetOutput = async (medicalHistory, name) => {
     try {
       const { age, sex, cp, rbp, sc, fbs, rer, mhr, eia, olds, st, mvs, thal } = medicalHistory;
-      const res = await fetch(`http://localhost:8000/predict/`, {
-        method: "POST",
+      const res = await fetch(`http://localhost:8005`, {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          data: [age, sex, cp, rbp, sc, fbs, rer, mhr, eia, olds, st, mvs, thal],
-          name: name
+          message: {
+            name: 'John Doe',
+            data: [age, sex, cp, rbp, sc, fbs, rer, mhr, eia, olds, st, mvs, thal],
+          }
         }),
       });
-
+      console.log(res)
       if (res.ok) {
-        const data = await res.json();
+        const data = res;
+        console.log(res)
         setData(data);
         setK(data);
         
@@ -82,7 +85,7 @@ const Jpp = () => {
   const GetOutput1 = async (medicalHistory,name) => {
     try {
       const { age, sex, cp, rbp, sc, fbs, rer, mhr, eia, olds, st, mvs, thal } = medicalHistory;
-      const res = await fetch('http://localhost:8000/summary', {
+      const res = await fetch('http://localhost:8005', {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
