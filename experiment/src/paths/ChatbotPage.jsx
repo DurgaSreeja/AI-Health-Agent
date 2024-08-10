@@ -10,10 +10,10 @@ const ChatbotPage = () => {
   const [apiUrl, setApiUrl] = useState("");
 
   useEffect(() => {
+    // Load the saved URL, but don't hide the popup
     const savedUrl = localStorage.getItem("chatbotApiUrl");
     if (savedUrl) {
       setApiUrl(savedUrl);
-      setShowPopup(false);
     }
   }, []);
 

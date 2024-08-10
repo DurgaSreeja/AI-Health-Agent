@@ -10,10 +10,10 @@ const DiagnosisPredictor = () => {
   const [apiUrl, setApiUrl] = useState("");
 
   useEffect(() => {
+    // Load the saved URL, but keep the popup visible
     const savedUrl = localStorage.getItem("apiUrl");
     if (savedUrl) {
       setApiUrl(savedUrl);
-      setShowPopup(false);
     }
   }, []);
 
