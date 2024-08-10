@@ -56,3 +56,53 @@ Run the following steps in three separate terminals:
    cd experiment
    npm start
    ```
+2. **Backend**
+
+   ```
+    cd server.js
+    node server.js
+
+   ```
+
+3. **Uagent**
+
+```
+cd server.js
+cd Agents
+python gemini.py
+```
+
+## Getting a Google API Key
+
+- - To use certain features of this application, you'll need a Google API key. Here's how to obtain one:
+
+**Create a Google Cloud Project**
+
+- Go to the Google Cloud Console.
+- Create a new project or select an existing project.
+- Enable the Necessary APIs
+- In the Google Cloud Console, navigate to API & Services > Library.
+- Search for the required APIs (e.g., Google Cloud Natural Language API, Google Cloud Vision API).
+- Enable the APIs you need for your project.
+  **Create Credentials**
+- Go to API & Services > Credentials.
+- Click on Create Credentials and select API Key.
+- A new API key will be generated. Copy this key and keep it secure.
+- Set Up Billing
+  Some APIs require billing information. Ensure you have set up billing in your Google Cloud project.
+  **Use the API Key**
+- In your project, replace the placeholder with your API key where necessary.
+
+## Run on Google Colab
+
+Run a colab file in Google Colab, click the link below:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](YOUR_COLAB_LINK_HERE)
+
+### API Key Generation
+
+1. Click the Colab link above.
+2. Follow the instructions to generate an API key.
+3. Use the API key to run the file.
+4. You will receive local links to integrate this Colab into the project.
+   5..Add that link in the chatbox.jsx (in experiment folder/src/paths) file in the specified place .
