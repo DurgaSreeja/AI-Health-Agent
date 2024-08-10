@@ -304,7 +304,7 @@ function DietPlan() {
       }
 
       // Push the **header** as h2
-      elements.push(<h2 key={match.index}>{match[1]}</h2>);
+      elements.push(<h5 key={match.index}>{match[1]}</h5>);
 
       lastIndex = regex.lastIndex;
     }
@@ -375,7 +375,7 @@ function DietPlan() {
             </nav>
           </header>
 
-          <div style={{ marginTop: '20px', padding: '10px', backgroundColor: '#f0f0f0' }}>
+          <div style={{ marginTop: '20px', padding: '10px', backgroundColor: '#f0f0f0', fontSize:20}}>
             {renderDietPlan()}
           </div>
 
