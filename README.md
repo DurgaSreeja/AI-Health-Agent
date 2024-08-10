@@ -108,4 +108,4 @@ Run a colab file in Google Colab, click the link below:
    > **Note:** It is necessary to run this Colab file before proceeding.
 5. Add that link in specified file in the specified place .
    > ![alt text](image-6.png)
-6. If you have high computational performance then you can run the python notebook in server.js folder and add the public urin in the specified file
+6. If you have high computational performance then you can run the python notebook in server.js folder and add the public url in in the specified file

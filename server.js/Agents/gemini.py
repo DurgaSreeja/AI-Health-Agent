@@ -26,7 +26,7 @@ Gemini_agent = Agent(
 fund_agent_if_low(Gemini_agent.wallet.address())
 
 # Configuring the API key for Google's generative AI service
-genai.configure(api_key='AIzaSyBApiQzHbt4Qx99XDARotNxqXNPTiS02T0')  # Replace with your actual API key
+genai.configure(api_key='your-gemini-api-key')  # Replace with your actual API key
 
 # Initializing the generative model with a specific model name
 model = genai.GenerativeModel('gemini-pro')
