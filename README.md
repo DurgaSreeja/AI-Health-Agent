@@ -106,5 +106,7 @@ Run a colab file in Google Colab, click the link below:
 3. Use the API key to run the file.
 4. You will receive local links to integrate this Colab into the project.
    5..Add that link in the chatbox.jsx (in experiment folder/src/paths) file in the specified place .
+
    > **Note:** It is necessary to run this Colab file before proceeding.
+
    > ![alt text](image-6.png)
