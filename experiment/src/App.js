@@ -15,6 +15,7 @@ import NearbyHospitalsMap from "./paths/map";
 import Jpp from "./paths/mainoutput";
 import DietPlan from "./paths/dietpan";
 import ChatbotPage from "./paths/ChatbotPage";
+import DiagnosisPredictor from "./paths/DiagnosisPredictor";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/waterfilloutput" element={<Jpp />} />
           <Route path="/dietplan" element={<DietPlan />} />
           <Route path="/chatbot" element={<ChatbotPage />} />
+          <Route path="/diagnosis" element={<DiagnosisPredictor />} />
         </Routes>
       </Router>
     </>

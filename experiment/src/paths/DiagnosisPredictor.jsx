@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./ChatbotPage.css";
+import "./DiagnosisPredictor.css";
 
-const ChatbotPage = () => {
-  const [userInput, setUserInput] = useState("");
-  const [response, setResponse] = useState("");
+const DiagnosisPredictor = () => {
+  const [input, setInput] = useState("");
+  const [prediction, setPrediction] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
   const [apiUrl, setApiUrl] = useState("");
 
   useEffect(() => {
-    const savedUrl = localStorage.getItem("chatbotApiUrl");
+    const savedUrl = localStorage.getItem("apiUrl");
     if (savedUrl) {
       setApiUrl(savedUrl);
       setShowPopup(false);
@@ -34,24 +34,28 @@ const ChatbotPage = () => {
       : fullResponse.trim();
   };
 
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+  };
+
   const handleUrlSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("chatbotApiUrl", apiUrl);
+    localStorage.setItem("apiUrl", apiUrl);
     setShowPopup(false);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!userInput.trim()) return;
+    if (!input.trim()) return;
 
     setIsLoading(true);
     const inputData = {
-      prompt: userInput,
+      prompt: input,
     };
 
     try {
       const response = await axios.post(
-        `${apiUrl}/chat_h`,
+        `${apiUrl}/chat_d`,
         JSON.stringify(inputData),
         {
           headers: {
@@ -61,10 +65,10 @@ const ChatbotPage = () => {
       );
       console.log(response);
       const assistantResponse = extractAssistantResponse(response.data);
-      setResponse(assistantResponse);
+      setPrediction(assistantResponse);
     } catch (error) {
       console.error("An error occurred:", error);
-      setResponse("An error occurred while fetching the response.");
+      setPrediction("An error occurred while fetching the prediction.");
     } finally {
       setIsLoading(false);
     }
@@ -89,28 +93,28 @@ const ChatbotPage = () => {
           </div>
         </div>
       )}
-      <div className="chatbot-container">
-        <h1 className="title">AI Health Assistant</h1>
+      <div className="diagnosis-predictor">
+        <h1 className="title">Diagnosis Predictor</h1>
         <form onSubmit={handleSubmit} className="form">
           <textarea
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            placeholder="Describe your symptoms or ask a health question..."
-            rows={4}
+            value={input}
+            onChange={handleInputChange}
+            placeholder="Enter symptoms here..."
+            rows="5"
             className="text-area"
           />
           <button
             type="submit"
-            disabled={isLoading || !userInput.trim() || !apiUrl}
+            disabled={isLoading || !input.trim() || !apiUrl}
             className="button"
           >
-            {isLoading ? "Processing..." : "Send Message"}
+            {isLoading ? "Predicting..." : "Predict Diagnosis"}
           </button>
         </form>
-        {response && (
-          <div className="response-container">
-            <h2 className="response-title">Assistant's Response:</h2>
-            <p className="response-text">{response}</p>
+        {prediction && (
+          <div className="prediction-container">
+            <h2 className="prediction-title">Prediction:</h2>
+            <p className="prediction-text">{prediction}</p>
           </div>
         )}
       </div>
@@ -118,4 +122,4 @@ const ChatbotPage = () => {
   );
 };
 
-export default ChatbotPage;
+export default DiagnosisPredictor;

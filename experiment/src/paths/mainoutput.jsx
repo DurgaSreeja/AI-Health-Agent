@@ -54,33 +54,36 @@ const Jpp = () => {
     try {
       const { age, sex, cp, rbp, sc, fbs, rer, mhr, eia, olds, st, mvs, thal } =
         medicalHistory;
-      const res = await fetch(`http://localhost:8000/predict/`, {
+      const res = await fetch(`http://localhost:8005`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          data: [
-            age,
-            sex,
-            cp,
-            rbp,
-            sc,
-            fbs,
-            rer,
-            mhr,
-            eia,
-            olds,
-            st,
-            mvs,
-            thal,
-          ],
-          name: name,
+          message: {
+            name: "John Doe",
+            data: [
+              age,
+              sex,
+              cp,
+              rbp,
+              sc,
+              fbs,
+              rer,
+              mhr,
+              eia,
+              olds,
+              st,
+              mvs,
+              thal,
+            ],
+          },
         }),
       });
-
+      console.log(res);
       if (res.ok) {
-        const data = await res.json();
+        const data = res;
+        console.log(res);
         setData(data);
         setK(data);
       } else {
@@ -95,7 +98,7 @@ const Jpp = () => {
     try {
       const { age, sex, cp, rbp, sc, fbs, rer, mhr, eia, olds, st, mvs, thal } =
         medicalHistory;
-      const res = await fetch("http://localhost:8000/summary", {
+      const res = await fetch("http://localhost:8005", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

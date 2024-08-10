@@ -263,7 +263,8 @@ function Home() {
                 marginTop: "20px",
               }}
             >
-              <div
+              <Link
+                to="/diagnosis"
                 style={{
                   height: "100px",
                   borderRadius: "25px",
@@ -278,7 +279,7 @@ function Home() {
                   class="bi bi-archive-fill"
                   style={{ fontSize: "1.7rem", color: "#e11127" }}
                 ></i>
-              </div>
+              </Link>
               <Link
                 to="/waterfilloutput"
                 style={{
