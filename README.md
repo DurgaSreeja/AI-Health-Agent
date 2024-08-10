@@ -109,3 +109,11 @@ Run a colab file in Google Colab, click the link below:
 5. Add that link in specified file in the specified place .
    > ![alt text](image-6.png)
 6. If you have high computational performance then you can run the python notebook in server.js folder and add the public url in in the specified file
+
+## Reference Video
+
+For a detailed walkthrough on using our application, please refer to the following video:
+
+[Watch Video Tutorial](https://drive.google.com/file/d/1Ch_tcYN2ZfzWrPQGHYI-qIjB_4OHMKBM/view?usp=sharing)
+
+> **Note:** This video serves as a reference to better understand the functionality and integration of our application.
